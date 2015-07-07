@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+	<style type="text/css">
+		.on {
+			font-size: 100px;
+			color: red;
+		}
+		
+		.off {
+			font-size: 50px;
+			color: blue;
+		}
+	
+	</style>
+    <body>
+        <nav class="left">
+			<ul>
+				<li>Home</li>
+			</ul>
+		</nav>
+		<section class="main">
+			Simple addition
+			<input type="number" id="input1"/>
+			+ 
+			<input type="number" id="input2">
+			=
+			<span class="output"></span>
+			<button type="button" id="btncompute">Compute</button>
+			
+			<h1 id="header">This is a simple header</h1>
+			<button type="button" id="btnon">On</button>
+			<button type="button" id="btnoff">Off</button>
+		</section>
+    </body>
+
+	<script type="text/javascript" src="jquery-2.1.4.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log("All documents loaded");
+			$("#btncompute").click(function(){
+				console.log("computing....");
+				i1 = $("#input1").val();
+				console.log(typeof(i1));
+				i2 = $("#input2").val();
+				console.log(typeof(i2));
+				total = parseInt(i1) + parseInt(i2);
+				$(".output").html(total);
+			});
+			
+			$("#btnon").click(function(){
+				$("#header").removeClass("off");
+				$("#header").addClass("on");
+			})
+			$("#btnoff").click(function(){
+				$("#header").removeClass("on");
+				$("#header").addClass("off");
+			})
+		});
+	</script>
+</html>
